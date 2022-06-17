@@ -1,21 +1,20 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: nothing, return void
- * /
- 
+ * main-This Function prints _putchar using the local header file
+ * Description: Writes a program that prints _putchar, followed by a new line.
+ * Return: 0 (Success)
+ */
+
 int main(void)
 {
-	putchar(");
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
+	char x[8] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
+	unsigned int i;
+
+	for (i = 0; i < sizeof(x); i++)
+	{
+		_putchar(x[i]);
+	}
 	_putchar('\n');
 
 	return (0);
