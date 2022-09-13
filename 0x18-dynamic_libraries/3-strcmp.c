@@ -1,24 +1,31 @@
 #include "main.h"
-
 /**
- * _strcmp - compares two strings
- * @s1: string 1
- * @s2: string 2
- * Return: 1 if true, 0 if false
- */
-int _strcmp(char *s1, char *s2)
+*_strspn - search the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*@s:segment targeted
+*@accept:reference bytes container
+*
+*Return:returns the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*/
+unsigned int _strspn(char *s, char *accept)
 {
-	int equal = 0;
+	unsigned int bytes = 0;
+	int i;
 
-	while (*s1)
+	while (*s)
 	{
-		if (*s1 != *s2)
+		for (i = 0; accept[i]; i++)
 		{
-			equal = ((int)*s1 - 48) - ((int)*s2 - 48);
-			break;
+			if (accept[i] == *s)
+			{
+				bytes++;
+				break;
+			}
+			else if ((accept[i + 1]) == '\0')
+				return (bytes);
 		}
-		s1++;
-		s2++;
+		s++;
 	}
-	return (equal);
+	return (bytes);
 }
